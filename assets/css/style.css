@@ -1,20 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-:root {
-    --bs-font-sans-serif: 'Source Sans Pro', Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-section,
-.container,
-div {
-    border: 1px solid black;
-    min-height: 100px;
-}
-
 section {
-    padding: 50px 0;
+    padding: 4rem 0;
 }
 
 .container>div {
-    padding: 10px 0;
+    padding: 2rem;
+}
+
+#home {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vmin;
+    background-color: #bcdeee33;
+    padding-top: 6rem;
+}
+
+#home {
+    display: flex;
+    align-items: center
+}
+
+#features .container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1 1 365px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.feature:last-child,
+#project .container:last-child {
+    margin-bottom: 0;
+}
+
+.feature .icon {
+    width: 8rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    filter: drop-shadow(0px 4px 16px #001e2d1a);
+    margin-bottom: 1.5rem;
+}
+
+#about-us {
+    background-color: #d5949d1a;
+}
+
+#coming {
+    background-color: #bcdeee33;
+}
+
+.form-check {
+    margin: 1rem 0;
+}
+
+@media (min-width: 1024px) {
+
+    #home .container,
+    #project .container,
+    #register .container {
+        display: grid;
+        gap: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: 40% 60%;
+        align-items: center;
+        align-self: end;
+    }
+
+    .grid-reverse {
+        grid-row-end: none;
+    }
+
+    .project-img-idea {
+        grid-area: project-img-idea;
+    }
+
+    .project-txt-idea {
+        grid-area: project-txt-idea;
+    }
+
+    .project-img-app {
+        grid-area: project-img-app;
+    }
+
+    .project-txt-app {
+        grid-area: project-txt-app;
+    }
+
+    #project .container {
+        grid-template-areas:
+            "project-img-idea project-txt-idea"
+            "project-txt-app project-img-app";
+    }
+
+    div[class^="project-txt"] {
+        margin-top: 2rem;
+    }
+
+    #register .container {
+        grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    }
+
+}
+
+@media (min-width: 1440px) {
+    .feature {
+        flex: 1 1 315px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1440px;
+    }
 }
