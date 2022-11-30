@@ -8,15 +8,52 @@ section {
     padding: 2rem;
 }
 
+img {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+header *:not(button) {
+    height: 100%;
+}
+
+nav .container {
+    padding: 0 3rem;
+}
+
+.sticky {
+    position: fixed;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    z-index: 1000;
+}
+
+.sticky-bg {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 10%);
+    box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 10%);
+}
+
+.navbar-collapse {
+    flex-grow: unset;
+}
+
 #home {
     width: 100vw;
     height: 100vh;
     min-height: 100vmin;
     background-color: #bcdeee33;
-    padding-top: 6rem;
-}
-
-#home {
+    padding-top: 8rem;
     display: flex;
     align-items: center
 }
@@ -61,7 +98,7 @@ section {
     margin: 1rem 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (orientation: landscape) {
 
     #home .container,
     #project .container,
@@ -73,7 +110,7 @@ section {
     .grid {
         grid-template-columns: 40% 60%;
         align-items: center;
-        align-self: end;
+        /* align-self: flex-end; */
     }
 
     .grid-reverse {
