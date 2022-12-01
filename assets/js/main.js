@@ -28,3 +28,11 @@ document.querySelectorAll('.toggleNav').forEach(nav => nav.addEventListener('cli
         }
     }
 }))
+
+document.querySelector('.privacy-toast').addEventListener('click', () => {
+    document.querySelector('.toast-bkg').classList.remove('hide')
+})
+
+document.querySelector('.btn-toast.btn-close').addEventListener('click', () => {
+    document.querySelector('.toast-bkg').classList.add('hide')
+})
